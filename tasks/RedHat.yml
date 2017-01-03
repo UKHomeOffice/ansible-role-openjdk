@@ -1,0 +1,7 @@
+---
+- name: Install Java
+  yum:
+    name: "{{ item }}"
+    state: latest
+  with_items: "{{ jdk_packages }}"
+  when: "{{ jdk_packages }}"

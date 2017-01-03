@@ -1,0 +1,13 @@
+---
+- name: Include variables suitable to our OS Family
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: Include tasks suitable to our OS Family
+  include: "{{ ansible_os_family }}.yml"
+
+
+- name: set JAVA_HOME
+  template:
+    src: jdk.sh.j2
+    dest: /etc/profile.d/jdk.sh
+
